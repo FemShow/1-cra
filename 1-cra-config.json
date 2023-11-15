@@ -1,0 +1,82 @@
+{
+    "$schema": "https://purl.org/csv-cubed/qube-config/v1",
+    "title": "Other Corporate Bodies Administered at Companies House",
+    "summary": "Other corporate bodies in the United Kingdom administered by Companies House, 2012-13 to 2021-22",
+    "description": "x Denotes where no new or closed registration activity has occurred  The requirement to add the names of assurance companies to the index of company names ceased in 2003. All assurance/insurance companies are regulated by the Financial Conduct Authority.(FCA). 2. To obtain further information about registering an assurance/insurance company please visit the FCA website: http://www.fca.org.uk/. 3. Following the introduction of the Co-operative and Community Benefit Societies Act 2014 (2016 Act for Northern Ireland), all societies registered under the Industrial and Provident Societies Act 1965 (or its predecessors) have now legally been merged with 'Registered Societies'. Data is unavailable for 'new ' and 'closed' corporate bodies for the years prior to 2019-20. 4. Royal Charters date back to the thirteenth century. They are granted by the sovereign upon the advice of the Privy Council. New charters are normally reserved for bodies that work in the public interest (such as professional institutions and charities) and which can demonstrate pre-eminence, stability and permanence in their particular field. Most are comparable to companies limited by guarantee rather than those limited by shares. 5. Special Acts of Parliament relate to Unregistered Companies (ZC companies), but for the purpose of this table Royal Charters are excluded from Special Acts of Parliament and listed separately. Unregistered companies include: Royal Charter companies, companies formed by Acts of Parliament other than the Companies Act, companies formed by letters patent, any company in existence on or prior to the 2nd November 1862. They appear on the Index of Company Names and are identified by a ‘ZC’ reference number. 6. From the 26 May 2015 there is no longer a requirement for a newspaper, not incorporated as a company, to file an annual return or notify a change of proprietor. The figures provided only cover the period up to this date. 7. Registered under the European Economic Interest Grouping Regulations 1989 (SI 1989 No 638). 8. The European Economic Interest Grouping is a form of association between companies or other legal bodies, firms or individuals from different EU countries who need to operate together across national frontiers. It carries out particular tasks for its member-owners and is quite separate from its owners' businesses. Its aim is to facilitate or develop the economic activities of its members. 9. Registered under the European Company Statute and European Public Limited Liability Company Regulation 2004. 10. A Societas Europaea is a European Public Limited – Liability Company. An SE may be created on registration in any one of the Member States of the European Economic Area (EEA). Article 10 of the Regulation requires Member States to treat an SE as if it is a public limited company formed in accordance with the law of the Member State in which it has its registered office. UK national laws that apply to public limited companies also apply, in many respects, to SEs registered in the UK (this is applied by Article 9(1)(c)(ii) of the Regulation). 11. Due to UK's exit from the European Union the majority of Europeans EEIGs and Europeans SEs became part of the UK Economic Interest Grouping and UK Societas. R. Figures were found to be missing or incorrect, and have been revised accordingly.",
+    "license": "http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+    "public_contact_point_uri": "mailto:statistics@companieshouse.gov.uk",
+    "themes": "https://www.ons.gov.uk/economy/economicoutputandproductivity",
+    "publisher": "https://www.gov.uk/government/organisations/companies-house",
+    "creator": "https://www.gov.uk/government/organisations/companies-house",
+    "dataset_issued": "2022-03-31T00:00:00Z",
+    "dataset_modified": "2022-03-31T00:00:00Z",
+    "keywords": [
+        "companies",
+        "companieshouse",
+        "liability",
+        "limited",
+        "company",
+        "corporate" 
+    ],
+    "columns": {
+    "Corporate body type": {
+          "type": "dimension",
+          "label": "Corporate body type"
+       },  
+      "Year": {
+        "from_template": "government-year"
+      },
+      "New": {
+        "type": "observations",
+        "measure": {
+          "label": "New",
+          "description": "Number of New Companies",
+          "from_existing": "https://purl.org/csv-cubed/resources/measures#count-of-companies"
+        },
+        "data_type": "integer",
+        "unit": {
+          "label": "Number",
+          "from_existing": "http://qudt.org/vocab/unit/NUM"
+        }
+      },
+      "New-obsStatus": {
+        "from_template": "observation-status",
+        "describes_observations": "New"
+      },
+      "Closed": {
+        "type": "observations",
+        "measure": {
+          "label": "Closed",
+          "description": "Number of Closed Companies",
+          "from_existing": "https://purl.org/csv-cubed/resources/measures#count-of-companies"
+        },
+        "data_type": "integer",
+        "unit": {
+          "label": "Number",
+          "from_existing": "http://qudt.org/vocab/unit/NUM"
+        }
+      },
+      "Closed-obsStatus": {
+        "from_template": "observation-status",
+        "describes_observations": "Closed"
+      },
+      "On_reg":{
+        "type": "observations",
+        "measure": {
+          "label": "On the register1",
+          "description": "Number of Companies on the register",
+          "from_existing": "https://purl.org/csv-cubed/resources/measures#count-of-companies"
+        },
+        "data_type": "integer",
+        "unit": {
+          "label": "Number",
+          "from_existing": "http://qudt.org/vocab/unit/NUM"
+        }
+      },
+      "On_reg-revised":{
+        "type": "attribute",
+        "describes_observations": "On_reg"
+     }
+   }  
+}
+
