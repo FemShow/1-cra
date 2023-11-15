@@ -1,0 +1,1005 @@
+{
+    "@context": "http://www.w3.org/ns/csvw",
+    "@id": "other-corporate-bodies-administered-at-companies-house.csv#dataset",
+    "tables": [
+        {
+            "url": "other-corporate-bodies-administered-at-companies-house.csv",
+            "tableSchema": {
+                "columns": [
+                    {
+                        "titles": "Corporate body type",
+                        "name": "corporate_body_type",
+                        "propertyUrl": "other-corporate-bodies-administered-at-companies-house.csv#dimension/corporate-body-type",
+                        "valueUrl": "corporate-body-type.csv#{+corporate_body_type}",
+                        "required": true
+                    },
+                    {
+                        "titles": "Year",
+                        "name": "year",
+                        "propertyUrl": "other-corporate-bodies-administered-at-companies-house.csv#dimension/government-year",
+                        "valueUrl": "government-year.csv#{+year}",
+                        "required": true
+                    },
+                    {
+                        "titles": "New",
+                        "name": "new",
+                        "aboutUrl": "other-corporate-bodies-administered-at-companies-house.csv#obs/{corporate_body_type},{year}@new",
+                        "propertyUrl": "other-corporate-bodies-administered-at-companies-house.csv#measure/new",
+                        "datatype": "integer",
+                        "required": false
+                    },
+                    {
+                        "titles": "New-obsStatus",
+                        "name": "new_obsstatus",
+                        "aboutUrl": "other-corporate-bodies-administered-at-companies-house.csv#obs/{corporate_body_type},{year}@new",
+                        "propertyUrl": "other-corporate-bodies-administered-at-companies-house.csv#attribute/observation-status",
+                        "valueUrl": "other-corporate-bodies-administered-at-companies-house.csv#attribute/observation-status/{+new_obsstatus}",
+                        "required": false
+                    },
+                    {
+                        "titles": "Closed",
+                        "name": "closed",
+                        "aboutUrl": "other-corporate-bodies-administered-at-companies-house.csv#obs/{corporate_body_type},{year}@closed",
+                        "propertyUrl": "other-corporate-bodies-administered-at-companies-house.csv#measure/closed",
+                        "datatype": "integer",
+                        "required": false
+                    },
+                    {
+                        "titles": "Closed-obsStatus",
+                        "name": "closed_obsstatus",
+                        "aboutUrl": "other-corporate-bodies-administered-at-companies-house.csv#obs/{corporate_body_type},{year}@closed",
+                        "propertyUrl": "other-corporate-bodies-administered-at-companies-house.csv#attribute/observation-status",
+                        "valueUrl": "other-corporate-bodies-administered-at-companies-house.csv#attribute/observation-status/{+closed_obsstatus}",
+                        "required": false
+                    },
+                    {
+                        "titles": "On_reg",
+                        "name": "on_reg",
+                        "aboutUrl": "other-corporate-bodies-administered-at-companies-house.csv#obs/{corporate_body_type},{year}@on-the-register1",
+                        "propertyUrl": "other-corporate-bodies-administered-at-companies-house.csv#measure/on-the-register1",
+                        "datatype": "integer",
+                        "required": false
+                    },
+                    {
+                        "titles": "On_reg-revised",
+                        "name": "on_reg_revised",
+                        "aboutUrl": "other-corporate-bodies-administered-at-companies-house.csv#obs/{corporate_body_type},{year}@on-the-register1",
+                        "propertyUrl": "other-corporate-bodies-administered-at-companies-house.csv#attribute/on_reg-revised",
+                        "valueUrl": "other-corporate-bodies-administered-at-companies-house.csv#attribute/on_reg-revised/{+on_reg_revised}",
+                        "required": false
+                    },
+                    {
+                        "name": "virt_slice",
+                        "virtual": true,
+                        "propertyUrl": "rdf:type",
+                        "valueUrl": "qb:Slice"
+                    },
+                    {
+                        "name": "virt_slice_structure",
+                        "virtual": true,
+                        "propertyUrl": "qb:sliceStructure",
+                        "valueUrl": "other-corporate-bodies-administered-at-companies-house.csv#slice/cross-measures"
+                    },
+                    {
+                        "name": "virt_obs_new",
+                        "virtual": true,
+                        "propertyUrl": "qb:observation",
+                        "valueUrl": "other-corporate-bodies-administered-at-companies-house.csv#obs/{corporate_body_type},{year}@new"
+                    },
+                    {
+                        "name": "virt_obs_new_meas",
+                        "virtual": true,
+                        "aboutUrl": "other-corporate-bodies-administered-at-companies-house.csv#obs/{corporate_body_type},{year}@new",
+                        "propertyUrl": "qb:measureType",
+                        "valueUrl": "other-corporate-bodies-administered-at-companies-house.csv#measure/new"
+                    },
+                    {
+                        "name": "virt_obs_new_unit",
+                        "virtual": true,
+                        "aboutUrl": "other-corporate-bodies-administered-at-companies-house.csv#obs/{corporate_body_type},{year}@new",
+                        "propertyUrl": "http://purl.org/linked-data/sdmx/2009/attribute#unitMeasure",
+                        "valueUrl": "other-corporate-bodies-administered-at-companies-house.csv#unit/number"
+                    },
+                    {
+                        "name": "virt_dim_new_corporate_body_type",
+                        "virtual": true,
+                        "aboutUrl": "other-corporate-bodies-administered-at-companies-house.csv#obs/{corporate_body_type},{year}@new",
+                        "propertyUrl": "other-corporate-bodies-administered-at-companies-house.csv#dimension/corporate-body-type",
+                        "valueUrl": "corporate-body-type.csv#{+corporate_body_type}"
+                    },
+                    {
+                        "name": "virt_dim_new_year",
+                        "virtual": true,
+                        "aboutUrl": "other-corporate-bodies-administered-at-companies-house.csv#obs/{corporate_body_type},{year}@new",
+                        "propertyUrl": "other-corporate-bodies-administered-at-companies-house.csv#dimension/government-year",
+                        "valueUrl": "government-year.csv#{+year}"
+                    },
+                    {
+                        "name": "virt_obs_new_type",
+                        "virtual": true,
+                        "aboutUrl": "other-corporate-bodies-administered-at-companies-house.csv#obs/{corporate_body_type},{year}@new",
+                        "propertyUrl": "rdf:type",
+                        "valueUrl": "qb:Observation"
+                    },
+                    {
+                        "name": "virt_dataSet_new",
+                        "virtual": true,
+                        "aboutUrl": "other-corporate-bodies-administered-at-companies-house.csv#obs/{corporate_body_type},{year}@new",
+                        "propertyUrl": "qb:dataSet",
+                        "valueUrl": "other-corporate-bodies-administered-at-companies-house.csv#dataset"
+                    },
+                    {
+                        "name": "virt_obs_closed",
+                        "virtual": true,
+                        "propertyUrl": "qb:observation",
+                        "valueUrl": "other-corporate-bodies-administered-at-companies-house.csv#obs/{corporate_body_type},{year}@closed"
+                    },
+                    {
+                        "name": "virt_obs_closed_meas",
+                        "virtual": true,
+                        "aboutUrl": "other-corporate-bodies-administered-at-companies-house.csv#obs/{corporate_body_type},{year}@closed",
+                        "propertyUrl": "qb:measureType",
+                        "valueUrl": "other-corporate-bodies-administered-at-companies-house.csv#measure/closed"
+                    },
+                    {
+                        "name": "virt_obs_closed_unit",
+                        "virtual": true,
+                        "aboutUrl": "other-corporate-bodies-administered-at-companies-house.csv#obs/{corporate_body_type},{year}@closed",
+                        "propertyUrl": "http://purl.org/linked-data/sdmx/2009/attribute#unitMeasure",
+                        "valueUrl": "other-corporate-bodies-administered-at-companies-house.csv#unit/number"
+                    },
+                    {
+                        "name": "virt_dim_closed_corporate_body_type",
+                        "virtual": true,
+                        "aboutUrl": "other-corporate-bodies-administered-at-companies-house.csv#obs/{corporate_body_type},{year}@closed",
+                        "propertyUrl": "other-corporate-bodies-administered-at-companies-house.csv#dimension/corporate-body-type",
+                        "valueUrl": "corporate-body-type.csv#{+corporate_body_type}"
+                    },
+                    {
+                        "name": "virt_dim_closed_year",
+                        "virtual": true,
+                        "aboutUrl": "other-corporate-bodies-administered-at-companies-house.csv#obs/{corporate_body_type},{year}@closed",
+                        "propertyUrl": "other-corporate-bodies-administered-at-companies-house.csv#dimension/government-year",
+                        "valueUrl": "government-year.csv#{+year}"
+                    },
+                    {
+                        "name": "virt_obs_closed_type",
+                        "virtual": true,
+                        "aboutUrl": "other-corporate-bodies-administered-at-companies-house.csv#obs/{corporate_body_type},{year}@closed",
+                        "propertyUrl": "rdf:type",
+                        "valueUrl": "qb:Observation"
+                    },
+                    {
+                        "name": "virt_dataSet_closed",
+                        "virtual": true,
+                        "aboutUrl": "other-corporate-bodies-administered-at-companies-house.csv#obs/{corporate_body_type},{year}@closed",
+                        "propertyUrl": "qb:dataSet",
+                        "valueUrl": "other-corporate-bodies-administered-at-companies-house.csv#dataset"
+                    },
+                    {
+                        "name": "virt_obs_on_reg",
+                        "virtual": true,
+                        "propertyUrl": "qb:observation",
+                        "valueUrl": "other-corporate-bodies-administered-at-companies-house.csv#obs/{corporate_body_type},{year}@on-the-register1"
+                    },
+                    {
+                        "name": "virt_obs_on_reg_meas",
+                        "virtual": true,
+                        "aboutUrl": "other-corporate-bodies-administered-at-companies-house.csv#obs/{corporate_body_type},{year}@on-the-register1",
+                        "propertyUrl": "qb:measureType",
+                        "valueUrl": "other-corporate-bodies-administered-at-companies-house.csv#measure/on-the-register1"
+                    },
+                    {
+                        "name": "virt_obs_on_reg_unit",
+                        "virtual": true,
+                        "aboutUrl": "other-corporate-bodies-administered-at-companies-house.csv#obs/{corporate_body_type},{year}@on-the-register1",
+                        "propertyUrl": "http://purl.org/linked-data/sdmx/2009/attribute#unitMeasure",
+                        "valueUrl": "other-corporate-bodies-administered-at-companies-house.csv#unit/number"
+                    },
+                    {
+                        "name": "virt_dim_on_reg_corporate_body_type",
+                        "virtual": true,
+                        "aboutUrl": "other-corporate-bodies-administered-at-companies-house.csv#obs/{corporate_body_type},{year}@on-the-register1",
+                        "propertyUrl": "other-corporate-bodies-administered-at-companies-house.csv#dimension/corporate-body-type",
+                        "valueUrl": "corporate-body-type.csv#{+corporate_body_type}"
+                    },
+                    {
+                        "name": "virt_dim_on_reg_year",
+                        "virtual": true,
+                        "aboutUrl": "other-corporate-bodies-administered-at-companies-house.csv#obs/{corporate_body_type},{year}@on-the-register1",
+                        "propertyUrl": "other-corporate-bodies-administered-at-companies-house.csv#dimension/government-year",
+                        "valueUrl": "government-year.csv#{+year}"
+                    },
+                    {
+                        "name": "virt_obs_on_reg_type",
+                        "virtual": true,
+                        "aboutUrl": "other-corporate-bodies-administered-at-companies-house.csv#obs/{corporate_body_type},{year}@on-the-register1",
+                        "propertyUrl": "rdf:type",
+                        "valueUrl": "qb:Observation"
+                    },
+                    {
+                        "name": "virt_dataSet_on_reg",
+                        "virtual": true,
+                        "aboutUrl": "other-corporate-bodies-administered-at-companies-house.csv#obs/{corporate_body_type},{year}@on-the-register1",
+                        "propertyUrl": "qb:dataSet",
+                        "valueUrl": "other-corporate-bodies-administered-at-companies-house.csv#dataset"
+                    }
+                ],
+                "foreignKeys": [
+                    {
+                        "columnReference": "corporate_body_type",
+                        "reference": {
+                            "resource": "corporate-body-type.csv",
+                            "columnReference": "uri_identifier"
+                        }
+                    },
+                    {
+                        "columnReference": "year",
+                        "reference": {
+                            "resource": "government-year.csv",
+                            "columnReference": "uri_identifier"
+                        }
+                    }
+                ],
+                "primaryKey": [
+                    "corporate_body_type",
+                    "year"
+                ],
+                "aboutUrl": "other-corporate-bodies-administered-at-companies-house.csv#slice/{corporate_body_type},{year}"
+            }
+        },
+        {
+            "url": "corporate-body-type.csv",
+            "tableSchema": "corporate-body-type.table.json",
+            "suppressOutput": true
+        },
+        {
+            "url": "government-year.csv",
+            "tableSchema": "government-year.table.json",
+            "suppressOutput": true
+        }
+    ],
+    "rdfs:seeAlso": [
+        {
+            "@id": "other-corporate-bodies-administered-at-companies-house.csv#component/measure-type",
+            "@type": [
+                "http://purl.org/linked-data/cube#ComponentSet",
+                "http://purl.org/linked-data/cube#ComponentSpecification",
+                "http://www.w3.org/2000/01/rdf-schema#Resource"
+            ],
+            "http://purl.org/linked-data/cube#componentProperty": [
+                {
+                    "@id": "http://purl.org/linked-data/cube#measureType"
+                }
+            ],
+            "http://purl.org/linked-data/cube#dimension": [
+                {
+                    "@id": "http://purl.org/linked-data/cube#measureType"
+                }
+            ],
+            "http://purl.org/linked-data/cube#order": [
+                {
+                    "@value": 7
+                },
+                {
+                    "@value": 3
+                },
+                {
+                    "@value": 10
+                }
+            ]
+        },
+        {
+            "@id": "other-corporate-bodies-administered-at-companies-house.csv#component/corporate-body-type",
+            "@type": [
+                "http://purl.org/linked-data/cube#ComponentSet",
+                "http://purl.org/linked-data/cube#ComponentSpecification",
+                "http://www.w3.org/2000/01/rdf-schema#Resource"
+            ],
+            "http://purl.org/linked-data/cube#componentProperty": [
+                {
+                    "@id": "other-corporate-bodies-administered-at-companies-house.csv#dimension/corporate-body-type"
+                }
+            ],
+            "http://purl.org/linked-data/cube#dimension": [
+                {
+                    "@id": "other-corporate-bodies-administered-at-companies-house.csv#dimension/corporate-body-type"
+                }
+            ],
+            "http://purl.org/linked-data/cube#order": [
+                {
+                    "@value": 1
+                }
+            ]
+        },
+        {
+            "@id": "other-corporate-bodies-administered-at-companies-house.csv#component/government-year",
+            "@type": [
+                "http://purl.org/linked-data/cube#ComponentSet",
+                "http://purl.org/linked-data/cube#ComponentSpecification",
+                "http://www.w3.org/2000/01/rdf-schema#Resource"
+            ],
+            "http://purl.org/linked-data/cube#componentProperty": [
+                {
+                    "@id": "other-corporate-bodies-administered-at-companies-house.csv#dimension/government-year"
+                }
+            ],
+            "http://purl.org/linked-data/cube#dimension": [
+                {
+                    "@id": "other-corporate-bodies-administered-at-companies-house.csv#dimension/government-year"
+                }
+            ],
+            "http://purl.org/linked-data/cube#order": [
+                {
+                    "@value": 2
+                }
+            ]
+        },
+        {
+            "@id": "other-corporate-bodies-administered-at-companies-house.csv#attribute/observation-status",
+            "@type": [
+                "http://purl.org/linked-data/cube#AttributeProperty",
+                "http://purl.org/linked-data/cube#ComponentProperty",
+                "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+                "http://www.w3.org/2000/01/rdf-schema#Resource"
+            ],
+            "http://www.w3.org/2000/01/rdf-schema#label": [
+                {
+                    "@language": "en",
+                    "@value": "Observation Status"
+                }
+            ],
+            "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+                {
+                    "@id": "http://purl.org/linked-data/sdmx/2009/attribute#obsStatus"
+                }
+            ]
+        },
+        {
+            "@id": "other-corporate-bodies-administered-at-companies-house.csv#component/observation-status",
+            "@type": [
+                "http://purl.org/linked-data/cube#ComponentSet",
+                "http://purl.org/linked-data/cube#ComponentSpecification",
+                "http://www.w3.org/2000/01/rdf-schema#Resource"
+            ],
+            "http://purl.org/linked-data/cube#attribute": [
+                {
+                    "@id": "other-corporate-bodies-administered-at-companies-house.csv#attribute/observation-status"
+                }
+            ],
+            "http://purl.org/linked-data/cube#componentProperty": [
+                {
+                    "@id": "other-corporate-bodies-administered-at-companies-house.csv#attribute/observation-status"
+                }
+            ],
+            "http://purl.org/linked-data/cube#componentRequired": [
+                {
+                    "@value": false
+                }
+            ],
+            "http://purl.org/linked-data/cube#order": [
+                {
+                    "@value": 9
+                },
+                {
+                    "@value": 6
+                }
+            ]
+        },
+        {
+            "@id": "other-corporate-bodies-administered-at-companies-house.csv#class/government-year",
+            "@type": [
+                "http://www.w3.org/2000/01/rdf-schema#Class",
+                "http://www.w3.org/2000/01/rdf-schema#Resource"
+            ]
+        },
+        {
+            "@id": "other-corporate-bodies-administered-at-companies-house.csv#dimension/corporate-body-type",
+            "@type": [
+                "http://purl.org/linked-data/cube#DimensionProperty",
+                "http://purl.org/linked-data/cube#CodedProperty",
+                "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+                "http://purl.org/linked-data/cube#ComponentProperty",
+                "http://www.w3.org/2000/01/rdf-schema#Resource"
+            ],
+            "http://purl.org/linked-data/cube#codeList": [
+                {
+                    "@id": "corporate-body-type.csv#code-list"
+                }
+            ],
+            "http://www.w3.org/2000/01/rdf-schema#label": [
+                {
+                    "@language": "en",
+                    "@value": "Corporate body type"
+                }
+            ],
+            "http://www.w3.org/2000/01/rdf-schema#range": [
+                {
+                    "@id": "other-corporate-bodies-administered-at-companies-house.csv#class/corporate-body-type"
+                }
+            ]
+        },
+        {
+            "@id": "other-corporate-bodies-administered-at-companies-house.csv#component/new",
+            "@type": [
+                "http://purl.org/linked-data/cube#ComponentSet",
+                "http://purl.org/linked-data/cube#ComponentSpecification",
+                "http://www.w3.org/2000/01/rdf-schema#Resource"
+            ],
+            "http://purl.org/linked-data/cube#componentProperty": [
+                {
+                    "@id": "other-corporate-bodies-administered-at-companies-house.csv#measure/new"
+                }
+            ],
+            "http://purl.org/linked-data/cube#measure": [
+                {
+                    "@id": "other-corporate-bodies-administered-at-companies-house.csv#measure/new"
+                }
+            ],
+            "http://purl.org/linked-data/cube#order": [
+                {
+                    "@value": 5
+                }
+            ]
+        },
+        {
+            "@id": "other-corporate-bodies-administered-at-companies-house.csv#measure/closed",
+            "@type": [
+                "http://purl.org/linked-data/cube#MeasureProperty",
+                "http://purl.org/linked-data/cube#ComponentProperty",
+                "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+                "http://www.w3.org/2000/01/rdf-schema#Resource"
+            ],
+            "http://www.w3.org/2000/01/rdf-schema#comment": [
+                {
+                    "@language": "en",
+                    "@value": "Number of Closed Companies"
+                }
+            ],
+            "http://www.w3.org/2000/01/rdf-schema#label": [
+                {
+                    "@language": "en",
+                    "@value": "Closed"
+                }
+            ],
+            "http://www.w3.org/2000/01/rdf-schema#range": [
+                {
+                    "@id": "http://www.w3.org/2001/XMLSchema#integer"
+                }
+            ],
+            "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+                {
+                    "@id": "https://purl.org/csv-cubed/resources/measures#count-of-companies"
+                }
+            ]
+        },
+        {
+            "@id": "other-corporate-bodies-administered-at-companies-house.csv#dataset",
+            "@type": [
+                "http://www.w3.org/ns/dcat#Dataset",
+                "http://purl.org/linked-data/cube#Attachable",
+                "http://www.w3.org/ns/dcat#Resource",
+                "http://purl.org/linked-data/cube#DataSet",
+                "http://www.w3.org/2000/01/rdf-schema#Resource"
+            ],
+            "http://purl.org/dc/terms/creator": [
+                {
+                    "@id": "https://www.gov.uk/government/organisations/companies-house"
+                }
+            ],
+            "http://purl.org/dc/terms/description": [
+                {
+                    "@type": "https://www.w3.org/ns/iana/media-types/text/markdown#Resource",
+                    "@value": "x Denotes where no new or closed registration activity has occurred  The requirement to add the names of assurance companies to the index of company names ceased in 2003. All assurance/insurance companies are regulated by the Financial Conduct Authority.(FCA). 2. To obtain further information about registering an assurance/insurance company please visit the FCA website: http://www.fca.org.uk/. 3. Following the introduction of the Co-operative and Community Benefit Societies Act 2014 (2016 Act for Northern Ireland), all societies registered under the Industrial and Provident Societies Act 1965 (or its predecessors) have now legally been merged with 'Registered Societies'. Data is unavailable for 'new ' and 'closed' corporate bodies for the years prior to 2019-20. 4. Royal Charters date back to the thirteenth century. They are granted by the sovereign upon the advice of the Privy Council. New charters are normally reserved for bodies that work in the public interest (such as professional institutions and charities) and which can demonstrate pre-eminence, stability and permanence in their particular field. Most are comparable to companies limited by guarantee rather than those limited by shares. 5. Special Acts of Parliament relate to Unregistered Companies (ZC companies), but for the purpose of this table Royal Charters are excluded from Special Acts of Parliament and listed separately. Unregistered companies include: Royal Charter companies, companies formed by Acts of Parliament other than the Companies Act, companies formed by letters patent, any company in existence on or prior to the 2nd November 1862. They appear on the Index of Company Names and are identified by a \u2018ZC\u2019 reference number. 6. From the 26 May 2015 there is no longer a requirement for a newspaper, not incorporated as a company, to file an annual return or notify a change of proprietor. The figures provided only cover the period up to this date. 7. Registered under the European Economic Interest Grouping Regulations 1989 (SI 1989 No 638). 8. The European Economic Interest Grouping is a form of association between companies or other legal bodies, firms or individuals from different EU countries who need to operate together across national frontiers. It carries out particular tasks for its member-owners and is quite separate from its owners' businesses. Its aim is to facilitate or develop the economic activities of its members. 9. Registered under the European Company Statute and European Public Limited Liability Company Regulation 2004. 10. A Societas Europaea is a European Public Limited \u2013 Liability Company. An SE may be created on registration in any one of the Member States of the European Economic Area (EEA). Article 10 of the Regulation requires Member States to treat an SE as if it is a public limited company formed in accordance with the law of the Member State in which it has its registered office. UK national laws that apply to public limited companies also apply, in many respects, to SEs registered in the UK (this is applied by Article 9(1)(c)(ii) of the Regulation). 11. Due to UK's exit from the European Union the majority of Europeans EEIGs and Europeans SEs became part of the UK Economic Interest Grouping and UK Societas. R. Figures were found to be missing or incorrect, and have been revised accordingly."
+                }
+            ],
+            "http://purl.org/dc/terms/identifier": [
+                {
+                    "@value": "Other Corporate Bodies Administered at Companies House"
+                }
+            ],
+            "http://purl.org/dc/terms/issued": [
+                {
+                    "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
+                    "@value": "2022-03-31T00:00:00"
+                }
+            ],
+            "http://purl.org/dc/terms/license": [
+                {
+                    "@id": "http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+                }
+            ],
+            "http://purl.org/dc/terms/modified": [
+                {
+                    "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
+                    "@value": "2022-03-31T00:00:00"
+                }
+            ],
+            "http://purl.org/dc/terms/publisher": [
+                {
+                    "@id": "https://www.gov.uk/government/organisations/companies-house"
+                }
+            ],
+            "http://purl.org/dc/terms/title": [
+                {
+                    "@language": "en",
+                    "@value": "Other Corporate Bodies Administered at Companies House"
+                }
+            ],
+            "http://purl.org/linked-data/cube#structure": [
+                {
+                    "@id": "other-corporate-bodies-administered-at-companies-house.csv#structure"
+                }
+            ],
+            "http://www.w3.org/2000/01/rdf-schema#comment": [
+                {
+                    "@language": "en",
+                    "@value": "Other corporate bodies in the United Kingdom administered by Companies House, 2012-13 to 2021-22"
+                }
+            ],
+            "http://www.w3.org/2000/01/rdf-schema#label": [
+                {
+                    "@language": "en",
+                    "@value": "Other Corporate Bodies Administered at Companies House"
+                }
+            ],
+            "http://www.w3.org/ns/dcat#keyword": [
+                {
+                    "@language": "en",
+                    "@value": "companies"
+                },
+                {
+                    "@language": "en",
+                    "@value": "corporate"
+                },
+                {
+                    "@language": "en",
+                    "@value": "company"
+                },
+                {
+                    "@language": "en",
+                    "@value": "limited"
+                },
+                {
+                    "@language": "en",
+                    "@value": "companieshouse"
+                },
+                {
+                    "@language": "en",
+                    "@value": "liability"
+                }
+            ],
+            "http://www.w3.org/ns/dcat#theme": [
+                {
+                    "@id": "https://www.ons.gov.uk/economy/economicoutputandproductivity"
+                }
+            ],
+            "http://www.w3.org/ns/prov#wasGeneratedBy": [
+                {
+                    "@id": "other-corporate-bodies-administered-at-companies-house.csv#csvcubed-build-activity"
+                }
+            ]
+        },
+        {
+            "@id": "other-corporate-bodies-administered-at-companies-house.csv#structure",
+            "@type": [
+                "http://purl.org/linked-data/cube#DataStructureDefinition",
+                "http://purl.org/linked-data/cube#ComponentSet",
+                "http://www.w3.org/2000/01/rdf-schema#Resource"
+            ],
+            "http://purl.org/linked-data/cube#component": [
+                {
+                    "@id": "other-corporate-bodies-administered-at-companies-house.csv#component/measure-type"
+                },
+                {
+                    "@id": "other-corporate-bodies-administered-at-companies-house.csv#component/corporate-body-type"
+                },
+                {
+                    "@id": "other-corporate-bodies-administered-at-companies-house.csv#component/closed"
+                },
+                {
+                    "@id": "other-corporate-bodies-administered-at-companies-house.csv#component/unit"
+                },
+                {
+                    "@id": "other-corporate-bodies-administered-at-companies-house.csv#component/government-year"
+                },
+                {
+                    "@id": "other-corporate-bodies-administered-at-companies-house.csv#component/new"
+                },
+                {
+                    "@id": "other-corporate-bodies-administered-at-companies-house.csv#component/on-the-register1"
+                },
+                {
+                    "@id": "other-corporate-bodies-administered-at-companies-house.csv#component/on_reg-revised"
+                },
+                {
+                    "@id": "other-corporate-bodies-administered-at-companies-house.csv#component/observation-status"
+                }
+            ],
+            "http://purl.org/linked-data/cube#componentProperty": [
+                {
+                    "@id": "http://purl.org/linked-data/cube#measureType"
+                },
+                {
+                    "@id": "other-corporate-bodies-administered-at-companies-house.csv#measure/on-the-register1"
+                },
+                {
+                    "@id": "other-corporate-bodies-administered-at-companies-house.csv#measure/closed"
+                },
+                {
+                    "@id": "other-corporate-bodies-administered-at-companies-house.csv#measure/new"
+                },
+                {
+                    "@id": "other-corporate-bodies-administered-at-companies-house.csv#dimension/corporate-body-type"
+                },
+                {
+                    "@id": "other-corporate-bodies-administered-at-companies-house.csv#attribute/on_reg-revised"
+                },
+                {
+                    "@id": "other-corporate-bodies-administered-at-companies-house.csv#dimension/government-year"
+                },
+                {
+                    "@id": "other-corporate-bodies-administered-at-companies-house.csv#attribute/observation-status"
+                },
+                {
+                    "@id": "http://purl.org/linked-data/sdmx/2009/attribute#unitMeasure"
+                }
+            ],
+            "http://purl.org/linked-data/cube#sliceKey": [
+                {
+                    "@id": "other-corporate-bodies-administered-at-companies-house.csv#slice/cross-measures"
+                }
+            ]
+        },
+        {
+            "@id": "other-corporate-bodies-administered-at-companies-house.csv#component/closed",
+            "@type": [
+                "http://purl.org/linked-data/cube#ComponentSet",
+                "http://purl.org/linked-data/cube#ComponentSpecification",
+                "http://www.w3.org/2000/01/rdf-schema#Resource"
+            ],
+            "http://purl.org/linked-data/cube#componentProperty": [
+                {
+                    "@id": "other-corporate-bodies-administered-at-companies-house.csv#measure/closed"
+                }
+            ],
+            "http://purl.org/linked-data/cube#measure": [
+                {
+                    "@id": "other-corporate-bodies-administered-at-companies-house.csv#measure/closed"
+                }
+            ],
+            "http://purl.org/linked-data/cube#order": [
+                {
+                    "@value": 8
+                }
+            ]
+        },
+        {
+            "@id": "other-corporate-bodies-administered-at-companies-house.csv#slice/cross-measures",
+            "@type": [
+                "http://purl.org/linked-data/cube#ComponentSet",
+                "http://purl.org/linked-data/cube#SliceKey",
+                "http://www.w3.org/2000/01/rdf-schema#Resource"
+            ],
+            "http://purl.org/linked-data/cube#componentProperty": [
+                {
+                    "@id": "other-corporate-bodies-administered-at-companies-house.csv#dimension/government-year"
+                },
+                {
+                    "@id": "other-corporate-bodies-administered-at-companies-house.csv#dimension/corporate-body-type"
+                }
+            ]
+        },
+        {
+            "@id": "other-corporate-bodies-administered-at-companies-house.csv#dimension/government-year",
+            "@type": [
+                "http://purl.org/linked-data/cube#DimensionProperty",
+                "http://purl.org/linked-data/cube#CodedProperty",
+                "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+                "http://purl.org/linked-data/cube#ComponentProperty",
+                "http://www.w3.org/2000/01/rdf-schema#Resource"
+            ],
+            "http://purl.org/linked-data/cube#codeList": [
+                {
+                    "@id": "government-year.csv#code-list"
+                }
+            ],
+            "http://www.w3.org/2000/01/rdf-schema#label": [
+                {
+                    "@language": "en",
+                    "@value": "Government Year"
+                }
+            ],
+            "http://www.w3.org/2000/01/rdf-schema#range": [
+                {
+                    "@id": "other-corporate-bodies-administered-at-companies-house.csv#class/government-year"
+                }
+            ],
+            "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+                {
+                    "@id": "http://purl.org/linked-data/sdmx/2009/dimension#refPeriod"
+                }
+            ]
+        },
+        {
+            "@id": "other-corporate-bodies-administered-at-companies-house.csv#component/on_reg-revised",
+            "@type": [
+                "http://purl.org/linked-data/cube#ComponentSet",
+                "http://purl.org/linked-data/cube#ComponentSpecification",
+                "http://www.w3.org/2000/01/rdf-schema#Resource"
+            ],
+            "http://purl.org/linked-data/cube#attribute": [
+                {
+                    "@id": "other-corporate-bodies-administered-at-companies-house.csv#attribute/on_reg-revised"
+                }
+            ],
+            "http://purl.org/linked-data/cube#componentProperty": [
+                {
+                    "@id": "other-corporate-bodies-administered-at-companies-house.csv#attribute/on_reg-revised"
+                }
+            ],
+            "http://purl.org/linked-data/cube#componentRequired": [
+                {
+                    "@value": false
+                }
+            ],
+            "http://purl.org/linked-data/cube#order": [
+                {
+                    "@value": 12
+                }
+            ]
+        },
+        {
+            "@id": "other-corporate-bodies-administered-at-companies-house.csv#component/unit",
+            "@type": [
+                "http://purl.org/linked-data/cube#ComponentSet",
+                "http://purl.org/linked-data/cube#ComponentSpecification",
+                "http://www.w3.org/2000/01/rdf-schema#Resource"
+            ],
+            "http://purl.org/linked-data/cube#attribute": [
+                {
+                    "@id": "http://purl.org/linked-data/sdmx/2009/attribute#unitMeasure"
+                }
+            ],
+            "http://purl.org/linked-data/cube#componentProperty": [
+                {
+                    "@id": "http://purl.org/linked-data/sdmx/2009/attribute#unitMeasure"
+                }
+            ],
+            "http://purl.org/linked-data/cube#componentRequired": [
+                {
+                    "@value": true
+                }
+            ],
+            "http://purl.org/linked-data/cube#order": [
+                {
+                    "@value": 4
+                }
+            ]
+        },
+        {
+            "@id": "other-corporate-bodies-administered-at-companies-house.csv#component/on-the-register1",
+            "@type": [
+                "http://purl.org/linked-data/cube#ComponentSet",
+                "http://purl.org/linked-data/cube#ComponentSpecification",
+                "http://www.w3.org/2000/01/rdf-schema#Resource"
+            ],
+            "http://purl.org/linked-data/cube#componentProperty": [
+                {
+                    "@id": "other-corporate-bodies-administered-at-companies-house.csv#measure/on-the-register1"
+                }
+            ],
+            "http://purl.org/linked-data/cube#measure": [
+                {
+                    "@id": "other-corporate-bodies-administered-at-companies-house.csv#measure/on-the-register1"
+                }
+            ],
+            "http://purl.org/linked-data/cube#order": [
+                {
+                    "@value": 11
+                }
+            ]
+        },
+        {
+            "@id": "other-corporate-bodies-administered-at-companies-house.csv#class/corporate-body-type",
+            "@type": [
+                "http://www.w3.org/2000/01/rdf-schema#Class",
+                "http://www.w3.org/2000/01/rdf-schema#Resource"
+            ]
+        },
+        {
+            "@id": "other-corporate-bodies-administered-at-companies-house.csv#measure/new",
+            "@type": [
+                "http://purl.org/linked-data/cube#MeasureProperty",
+                "http://purl.org/linked-data/cube#ComponentProperty",
+                "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+                "http://www.w3.org/2000/01/rdf-schema#Resource"
+            ],
+            "http://www.w3.org/2000/01/rdf-schema#comment": [
+                {
+                    "@language": "en",
+                    "@value": "Number of New Companies"
+                }
+            ],
+            "http://www.w3.org/2000/01/rdf-schema#label": [
+                {
+                    "@language": "en",
+                    "@value": "New"
+                }
+            ],
+            "http://www.w3.org/2000/01/rdf-schema#range": [
+                {
+                    "@id": "http://www.w3.org/2001/XMLSchema#integer"
+                }
+            ],
+            "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+                {
+                    "@id": "https://purl.org/csv-cubed/resources/measures#count-of-companies"
+                }
+            ]
+        },
+        {
+            "@id": "other-corporate-bodies-administered-at-companies-house.csv#csvcubed-build-activity",
+            "@type": [
+                "http://www.w3.org/ns/prov#Activity",
+                "http://www.w3.org/2000/01/rdf-schema#Resource"
+            ],
+            "http://www.w3.org/ns/prov#used": [
+                {
+                    "@id": "https://github.com/GSS-Cogs/csvcubed/releases/tag/v0.4.4"
+                }
+            ]
+        },
+        {
+            "@id": "other-corporate-bodies-administered-at-companies-house.csv#measure/on-the-register1",
+            "@type": [
+                "http://purl.org/linked-data/cube#MeasureProperty",
+                "http://purl.org/linked-data/cube#ComponentProperty",
+                "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+                "http://www.w3.org/2000/01/rdf-schema#Resource"
+            ],
+            "http://www.w3.org/2000/01/rdf-schema#comment": [
+                {
+                    "@language": "en",
+                    "@value": "Number of Companies on the register"
+                }
+            ],
+            "http://www.w3.org/2000/01/rdf-schema#label": [
+                {
+                    "@language": "en",
+                    "@value": "On the register1"
+                }
+            ],
+            "http://www.w3.org/2000/01/rdf-schema#range": [
+                {
+                    "@id": "http://www.w3.org/2001/XMLSchema#integer"
+                }
+            ],
+            "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+                {
+                    "@id": "https://purl.org/csv-cubed/resources/measures#count-of-companies"
+                }
+            ]
+        },
+        {
+            "@id": "other-corporate-bodies-administered-at-companies-house.csv#attribute/on_reg-revised",
+            "@type": [
+                "http://purl.org/linked-data/cube#AttributeProperty",
+                "http://purl.org/linked-data/cube#ComponentProperty",
+                "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property",
+                "http://www.w3.org/2000/01/rdf-schema#Resource"
+            ],
+            "http://www.w3.org/2000/01/rdf-schema#label": [
+                {
+                    "@language": "en",
+                    "@value": "On_reg-revised"
+                }
+            ]
+        },
+        {
+            "@id": "other-corporate-bodies-administered-at-companies-house.csv#dependency/corporate-body-type",
+            "@type": [
+                "http://rdfs.org/ns/void#Dataset",
+                "http://www.w3.org/2000/01/rdf-schema#Resource"
+            ],
+            "http://rdfs.org/ns/void#dataDump": [
+                {
+                    "@id": "./corporate-body-type.csv-metadata.json"
+                }
+            ],
+            "http://rdfs.org/ns/void#uriSpace": [
+                {
+                    "@value": "corporate-body-type.csv#"
+                }
+            ]
+        },
+        {
+            "@id": "other-corporate-bodies-administered-at-companies-house.csv#dependency/government-year",
+            "@type": [
+                "http://rdfs.org/ns/void#Dataset",
+                "http://www.w3.org/2000/01/rdf-schema#Resource"
+            ],
+            "http://rdfs.org/ns/void#dataDump": [
+                {
+                    "@id": "./government-year.csv-metadata.json"
+                }
+            ],
+            "http://rdfs.org/ns/void#uriSpace": [
+                {
+                    "@value": "government-year.csv#"
+                }
+            ]
+        },
+        {
+            "@id": "other-corporate-bodies-administered-at-companies-house.csv#attribute/observation-status/x",
+            "@type": [
+                "http://www.w3.org/2000/01/rdf-schema#Resource"
+            ],
+            "http://www.w3.org/2000/01/rdf-schema#label": [
+                {
+                    "@language": "en",
+                    "@value": "x"
+                }
+            ]
+        },
+        {
+            "@id": "other-corporate-bodies-administered-at-companies-house.csv#attribute/observation-status/x",
+            "@type": [
+                "http://www.w3.org/2000/01/rdf-schema#Resource"
+            ],
+            "http://www.w3.org/2000/01/rdf-schema#label": [
+                {
+                    "@language": "en",
+                    "@value": "x"
+                }
+            ]
+        },
+        {
+            "@id": "other-corporate-bodies-administered-at-companies-house.csv#attribute/on_reg-revised/r",
+            "@type": [
+                "http://www.w3.org/2000/01/rdf-schema#Resource"
+            ],
+            "http://www.w3.org/2000/01/rdf-schema#label": [
+                {
+                    "@language": "en",
+                    "@value": "R"
+                }
+            ]
+        },
+        {
+            "@id": "other-corporate-bodies-administered-at-companies-house.csv#unit/number",
+            "@type": [
+                "http://qudt.org/schema/qudt/Unit",
+                "http://www.ontology-of-units-of-measure.org/resource/om-2/Unit",
+                "http://www.w3.org/2000/01/rdf-schema#Resource"
+            ],
+            "http://qudt.org/schema/qudt/isScalingOf": [
+                {
+                    "@id": "http://qudt.org/vocab/unit/NUM"
+                }
+            ],
+            "http://www.ontology-of-units-of-measure.org/resource/om-2/hasFactor": [
+                {
+                    "@type": "http://www.w3.org/2001/XMLSchema#float",
+                    "@value": "1.0"
+                }
+            ],
+            "http://www.ontology-of-units-of-measure.org/resource/om-2/hasUnit": [
+                {
+                    "@id": "http://qudt.org/vocab/unit/NUM"
+                }
+            ],
+            "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+                {
+                    "@id": "http://qudt.org/vocab/unit/NUM"
+                }
+            ],
+            "http://www.w3.org/2000/01/rdf-schema#label": [
+                {
+                    "@language": "en",
+                    "@value": "Number"
+                }
+            ]
+        }
+    ]
+}
